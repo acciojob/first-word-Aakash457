@@ -1,8 +1,21 @@
 function firstWord(s) {
-  // your code here
+  if (!s) return '';
+
+  // Remove leading spaces
+  s = s.trimStart();
+
+  // Find first space
+  const spaceIndex = s.indexOf(' ');
+
+  // If no space found, return the whole string
+  if (spaceIndex === -1) {
+    return s;
+  }
+
+  // Return substring up to the first space
+  return s.substring(0, spaceIndex);
 }
 
 // Do not change the code below
-
 const s = prompt("Enter String:");
 alert(firstWord(s));
